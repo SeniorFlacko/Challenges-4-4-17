@@ -9,9 +9,29 @@ def isadjacent(palabra1,palabra2):
 			return False
 	return True if count is 1 else False
 
-def shortestChainLen(start,target,d):
-	item = [start,1]
-	Q = deque('')
+d = ["hot", "dot", "dog", "lot", "log", "cog"]
+start  = "hit"
+target = "cog"
+
+Q = deque('')
+Q.append(start)
+cont=1
+
+while Q:
+	curr = Q.popleft()
+	for j in d:
+		if isadjacent(curr,j):
+			cont+=1
+			Q.append(j)
+			print(Q)
+			d.remove(j)
+			print(d)
+			if j is target:
+				print("Ya encontre el target")
+				print(cont)
+
+
+
 	
 
 
